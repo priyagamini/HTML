@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Time Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
+
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        /* Color classes */
+        .ads { background-color: orange; }
+        .ads-lab { background-color: orange; }
+
+        .java { background-color: steelblue; color: white; }
+        .java-lab { background-color: steelblue; color: white; }
+
+        .dm { background-color: yellow; }
+        .dmi { background-color: yellowgreen; }
+
+        .fds { background-color: plum; }
+        .fds-lab { background-color: plum; }
+
+        .irs { background-color: khaki; }
+        .irs-lab { background-color: khaki; }
+
+        .web-lab { background-color: teal; color: white; }
+
+        .tech { background-color: red; color: white; }
+
+        .es { background-color: white; }
+
+        .lunch {
+            background-color: white;
+            writing-mode: vertical-rl;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Weekly Time Table</h2>
+
+<table>
+    <tr>
+        <th>Day\Time</th>
+        <th>9:30 - 10:20</th>
+        <th>10:20 - 11:10</th>
+        <th>11:10 - 12:00</th>
+        <th>12:00 - 12:50</th>
+        <th>1:00 - 1:50</th>
+        <th>1:50 - 2:40</th>
+        <th>2:40 - 3:30</th>
+        <th>3:30 - 4:20</th>
+    </tr>
+
+    <!-- Monday -->
+    <tr>
+        <td>Mon</td>
+        <td class="ads">ADS</td>
+        <td class="java">JAVA</td>
+        <td colspan="2" class="java-lab">JAVA LAB</td>
+        <td rowspan="5" class="lunch">LUNCH</td>
+        <td class="dmi">D.MI</td>
+        <td colspan="2" class="dmi">D.MI LAB</td>
+    </tr>
+
+    <!-- Tuesday -->
+    <tr>
+        <td>Tue</td>
+        <td colspan="2" class="es">ES-Softskills-BB3</td>
+        <td class="java">JAVA</td>
+        <td class="dm">DM</td>
+        <td colspan="3" class="web-lab">WEB APP USING MERN STACK LAB</td>
+    </tr>
+
+    <!-- Wednesday -->
+    <tr>
+        <td>Wed</td>
+        <td colspan="3" class="tech">Technical Training</td>
+        <td class="irs">IRS</td>
+        <td class="dm">DM</td>
+        <td class="ads">ADS</td>
+        <td class="fds">FDS</td>
+    </tr>
+
+    <!-- Thursday -->
+    <tr>
+        <td>Thu</td>
+        <td colspan="2" class="fds-lab">FDS LAB</td>
+        <td class="fds">FDS</td>
+        <td class="dm">DM</td>
+        <td colspan="2" class="irs-lab">IRS LAB</td>
+        <td class="dmi">D.MI</td>
+    </tr>
+
+    <!-- Friday -->
+    <tr>
+        <td>Fri</td>
+        <td colspan="2" class="es">ES-Aptitude-BB1</td>
+        <td colspan="2" class="java-lab">JAVA LAB</td>
+        <td colspan="2" class="ads-lab">ADS LAB</td>
+        <td class="irs">IRS</td>
+    </tr>
+
+    <!-- Saturday -->
+    <tr>
+        <td>Sat</td>
+        <td colspan="8" class="es">LA Activities (Except 3rd Saturday)</td>
+    </tr>
+</table>
+
+</body>
+</html>
