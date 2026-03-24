@@ -1,17 +1,32 @@
-var express=require("express");
-var app=express();
-app.get("/",function(req, res){
-	res.send("welcome to express");
-})
-app.post("/admin", function(req, res){
-	res.send("welcome to admin page");
-})
-app.put("/admin/:id", function(req, res){
-	const id=req.params.id;
-	res.send("data updated"+id);
-})
-app.delete("/delete", function(req, res){
-	res.send("data deleted");
-})
-app.listen(3002);
-console.log("server is running");
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+require('dotenv').config();
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Routes
+const authRoutes = require('./routes/auth');
+const foodRoutes = require('./routes/food');
+const orderRoutes = require('./routes/orders');
+
+app.use('/api/auth', authRoutes);
+app.use('/api/food', foodRoutes);
+app.use('/api/orders', orderRoutes);
+
+// MongoDB connection (FIXED)
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() => {
+        console.log('MongoDB connected successfully');
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    })
+    .catch(err => {
+        console.error('MongoDB connection error:', err);
+    });
